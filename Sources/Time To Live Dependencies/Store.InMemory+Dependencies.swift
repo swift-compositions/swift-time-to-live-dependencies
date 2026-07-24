@@ -18,7 +18,11 @@ public import Time_To_Live_Store
 extension Store.InMemory where Instant == Clock.`Any`<Time_Primitive.Duration>.Instant {
     /// Inserts a value expiring `duration` from the injected clock's current
     /// instant; a `nil` duration never expires.
-    public func insert(_ value: Value, forKey key: Key, expiresIn duration: Time_Primitive.Duration? = nil) {
+    public func insert(
+        _ value: Value,
+        forKey key: Key,
+        expiresIn duration: Time_Primitive.Duration? = nil
+    ) {
         @Dependency(\.clock) var clock
         insert(value, forKey: key, ttl: TTL(duration, from: clock.now))
     }
