@@ -19,6 +19,12 @@ import Time_To_Live_Store
 
 @Suite
 struct `Store InMemory Dependencies Tests` {
+    @Suite struct Unit {}
+    @Suite struct `Edge Case` {}
+    @Suite struct Integration {}
+}
+
+extension `Store InMemory Dependencies Tests`.Unit {
     @Test
     func `insert expiresIn and value resolve the injected clock`() {
         let test = Clock.Test()
