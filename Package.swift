@@ -19,19 +19,19 @@ let package = Package(
     ],
     dependencies: [
         .package(
-            url: "https://github.com/swift-foundations/swift-time-to-live.git",
+            url: "https://github.com/swift-compositions/swift-time-to-live.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-foundations/swift-clocks-dependencies.git",
+            url: "https://github.com/swift-compositions/swift-clocks-dependencies.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-foundations/swift-dependencies.git",
+            url: "https://github.com/swift-compositions/swift-dependencies.git",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-time-primitives.git",
+            url: "https://github.com/swift-molecules/swift-time.git",
             branch: "main"
         ),
     ],
@@ -43,7 +43,7 @@ let package = Package(
                 .product(name: "Time To Live Store", package: "swift-time-to-live"),
                 .product(name: "Clocks Dependencies", package: "swift-clocks-dependencies"),
                 .product(name: "Dependencies", package: "swift-dependencies"),
-                .product(name: "Time Primitive", package: "swift-time-primitives"),
+                .product(name: "Time Primitive", package: "swift-time"),
             ]
         ),
         .testTarget(

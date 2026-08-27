@@ -15,7 +15,7 @@ optional expiration and explicit start instant.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/swift-foundations/swift-time-to-live-dependencies.git", branch: "main")
+    .package(url: "https://github.com/swift-compositions/swift-time-to-live-dependencies.git", branch: "main")
 ]
 ```
 
