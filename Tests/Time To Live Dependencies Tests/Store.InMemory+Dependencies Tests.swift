@@ -1,7 +1,7 @@
 import Clocks_Dependencies
 import Dependencies_Test_Support
 import Testing
-import Time_Primitive
+import Time
 import Time_To_Live_Store
 
 @testable import Time_To_Live_Dependencies
@@ -18,7 +18,7 @@ extension `Store InMemory Dependencies Tests`.Unit {
     func `insert expiresIn and value resolve the injected clock`() {
         let test = Clock.Test()
         let clock = Clock.`Any`(test)
-        let store = Store.InMemory<String, Int, Clock.`Any`<Time_Primitive.Duration>.Instant>()
+        let store = Store.InMemory<String, Int, Clock.`Any`<Time::Duration>.Instant>()
 
         withDependencies {
             $0.clock = clock
@@ -35,7 +35,7 @@ extension `Store InMemory Dependencies Tests`.Unit {
     func `an absent duration never expires`() {
         let test = Clock.Test()
         let clock = Clock.`Any`(test)
-        let store = Store.InMemory<String, Int, Clock.`Any`<Time_Primitive.Duration>.Instant>()
+        let store = Store.InMemory<String, Int, Clock.`Any`<Time::Duration>.Instant>()
 
         withDependencies {
             $0.clock = clock
@@ -51,7 +51,7 @@ extension `Store InMemory Dependencies Tests`.Unit {
     func `prune drops entries expired at the injected instant`() {
         let test = Clock.Test()
         let clock = Clock.`Any`(test)
-        let store = Store.InMemory<String, Int, Clock.`Any`<Time_Primitive.Duration>.Instant>()
+        let store = Store.InMemory<String, Int, Clock.`Any`<Time::Duration>.Instant>()
 
         withDependencies {
             $0.clock = clock

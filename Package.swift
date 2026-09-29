@@ -43,7 +43,7 @@ let package = Package(
                 .product(name: "Time To Live Store", package: "swift-time-to-live"),
                 .product(name: "Clocks Dependencies", package: "swift-clocks-dependencies"),
                 .product(name: "Dependencies", package: "swift-dependencies"),
-                .product(name: "Time Primitive", package: "swift-time"),
+                .product(name: "Time", package: "swift-time"),
             ]
         ),
         .testTarget(

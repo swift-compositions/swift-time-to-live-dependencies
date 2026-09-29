@@ -1,15 +1,15 @@
 public import Clocks_Dependencies
 import Dependencies
-public import Time_Primitive
+public import Time
 import Time_To_Live
 public import Time_To_Live_Store
 
-extension Store.InMemory where Instant == Clock.`Any`<Time_Primitive.Duration>.Instant {
+extension Store.InMemory where Instant == Clock.`Any`<Time::Duration>.Instant {
 
     public func insert(
         _ value: Value,
         forKey key: Key,
-        expiresIn duration: Time_Primitive.Duration? = nil
+        expiresIn duration: Time::Duration? = nil
     ) {
         @Dependency(\.clock) var clock
         insert(value, forKey: key, ttl: TTL(duration, from: clock.now))
